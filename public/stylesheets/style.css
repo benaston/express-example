@@ -966,6 +966,14 @@
     outline-offset: -2px;
     box-shadow: 0 0 0 2px rgba(255,255,0,0.8) inset !important;
   }
+  .hover.scale-down {
+    -webkit-transition: -webkit-transform 0.1s ease-in-out 0s;
+    -webkit-transform: scale(0.8);
+  }
+  .hover:not(.scale-down) {
+    -webkit-transition: -webkit-transform 0.1s ease-in-out 0s;
+    -webkit-transform: scale(1);
+  }
   .result:active {
     -webkit-transition: box-shadow 0.1s linear;
     box-shadow: 0 1px rgba(255,255,255,0.3) inset, 0 10px 20px rgba(255,255,255,0.25) inset, 0 0 0 2px rgba(255,255,0,0.8) inset !important;
@@ -979,6 +987,12 @@
   }
   .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:active {
     box-shadow: 0 1px rgba(255,255,255,0.3) inset, 0 10px 20px rgba(255,255,255,0.25) inset, 0 0 0 2px rgba(255,0,0,0.8) inset !important;
+  }
+  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder):active {
+    -webkit-transition: -webkit-transform 2s ease-out;
+    -webkit-animation-name: rotateAndLoseOpacity;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: ease-out;
   }
   .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:focus {
     box-shadow: 0 0 0 2px rgba(255,0,0,0.8) inset !important;
@@ -1048,6 +1062,17 @@
 
   100% {
       -webkit-transform: rotate(360deg) scale(1);
+    }
+}
+@-webkit-keyframes rotateAndLoseOpacity {
+  0% {
+/*-webkit-transform: rotateX(0deg) scale(1)*/
+      opacity: 1;
+    }
+
+  100% {
+/*-webkit-transform: rotateX(360deg) scale(1)*/
+      opacity: 0;
     }
 }
   .three-d-context {

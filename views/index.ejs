@@ -26,7 +26,92 @@
 				#example{display:none !important;}
 				#no-script{display:block !important;}
 			</style>
-		</noscript>			
+		</noscript>	
+		<style media="screen">
+
+    .container {
+      width: 260px;
+      height: 260px;
+      position: relative;
+      border: none;
+      -webkit-perspective: 1000px;         
+    }
+
+    #cube {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      -webkit-transform-style: preserve-3d;         
+      -webkit-transition: -webkit-transform 1s;
+    }
+
+    #cube figure {
+      display: block;
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: none;
+line-height: 85px;      
+      text-align: center;	  
+    }
+
+    #cube.panels-backface-invisible figure {
+      -webkit-backface-visibility: hidden;         
+    }
+/*
+    #cube .front  { background: hsla(   0, 100%, 50%, 0.7 ); }
+    #cube .back   { background: hsla(  60, 100%, 50%, 0.7 ); }
+    #cube .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
+    #cube .left   { background: hsla( 180, 100%, 50%, 0.7 ); }
+    #cube .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
+    #cube .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
+*/
+    #cube .front  {
+      -webkit-transform: translateZ( 100px );                       
+    }
+    #cube .back   {
+      -webkit-transform: rotateX( -180deg ) translateZ( 100px );         
+    }
+    #cube .right {
+      -webkit-transform: rotateY(   90deg ) translateZ( 100px );         
+    }
+    #cube .left {
+      -webkit-transform: rotateY(  -90deg ) translateZ( 100px );         
+    }
+    #cube .top {
+      -webkit-transform: rotateX(   90deg ) translateZ( 100px );         
+    }
+    #cube .bottom {
+      -webkit-transform: rotateX(  -90deg ) translateZ( 100px );         
+    }
+
+    #cube.show-front, #f-f:checked ~ #cube {
+      -webkit-transform: translateZ( -100px );         
+    }
+    #cube.show-back, #f-back:checked ~ #cube {
+      -webkit-transform: translateZ( -100px ) rotateX( -180deg );         
+    }
+    #cube.show-right, #f-r:checked ~ #cube {
+      -webkit-transform: translateZ( -100px ) rotateY(  -90deg );         
+    }
+    #cube.show-left, #f-l:checked ~ #cube {
+      -webkit-transform: translateZ( -100px ) rotateY(   90deg );         
+    }
+    #cube.show-top, #f-t:checked ~ #cube {
+      -webkit-transform: translateZ( -100px ) rotateX(  -90deg );         
+    }
+    #cube.show-bottom, #f-bottom:checked ~ #cube {
+      -webkit-transform: translateZ( -100px ) rotateX(   90deg );         
+    }
+
+	section, footer, nav {
+display: block;
+}
+
+figure {
+margin: 0;
+}
+  </style>
 	</head>
 	<body>		
 		<div class="app-wrapper three-d-context">
@@ -123,43 +208,247 @@
 						</div>				
 					</div>	
 					<div class="my-favourites">
-							<h2>my favourites</h2>						
-							<input type="checkbox" id="fav" />
-							<label id="btn-edit-favourites" for="fav" class="btn-show-dialog circular-btn" alt="Edit" title="Edit">y</label>						
-							<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
-								<div id="foo" class="hover" >
-									<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
-									</div>			
-								</div>
-								<div class="hover">
-									<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
-									</div>			
-								</div>
-								<div class="hover">
-									<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
-									</div>			
-								</div>
-								<div class="hover favourite-placeholder">
-									<div class="result" >	
-									</div>	
-								</div>
-								<div class="hover favourite-placeholder">
-									<div class="result" >	
-									</div>	
-								</div>
-								<div class="hover favourite-placeholder">
-									<div class="result" >	
-									</div>	
-								</div>
-							</div>					
+							<h2>my favourites</h2>													
+					<section class="container">
+						<input id="f-t" name="favourites-panel" type="radio" checked="checked"> 
+						<input id="f-l" name="favourites-panel" type="radio"> 
+						<input id="f-f" name="favourites-panel" type="radio"> 
+						<input id="f-r" name="favourites-panel" type="radio"> 
+						<input id="f-bottom" name="favourites-panel" type="radio"> 
+						<input id="f-back" name="favourites-panel" type="radio"> 
+						<label id="btn-edit-favourites" for="fav" class="btn-show-dialog circular-btn" alt="Edit" title="Edit">y</label>
+						<div class="cube-controls">
+							<table class="cube-net"> 
+								<tbody>
+									<tr> 
+										<td colspan="3"> 										
+											<label for="f-t"> 
+												1								 
+											</label> 
+										</td> 
+									</tr>
+									<tr>
+										<td> 										
+											<label for="f-l"> 
+												2					 
+											</label> 
+										</td>						 
+										<td> 										
+											<label for="f-f"> 
+												3								 
+											</label> 
+										</td>
+										<td> 
+											<label for="f-r"> 
+												4
+											</label> 
+										</td>						 
+									</tr>	 
+									<tr>
+										<td colspan="3"> 
+											<label for="f-bottom"> 
+												5
+											</label> 
+										</td> 									
+									</tr>					 
+									<tr>
+										<td colspan="3"> 
+											<label for="f-back"> 
+												6								 
+											</label> 
+										</td> 									
+									</tr>					 
+								</tbody>
+							</table>
 						</div>
+						<div id="cube" class="panels-backface-invisible">
+							<input type="checkbox" id="fav" />			
+							<figure class="front">
+								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+									<div id="foo" class="hover" >
+										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+								</div>
+							</figure>
+							<figure class="back">
+								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+									<div id="foo" class="hover" >
+										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+								</div>
+							</figure>
+							<figure class="right">
+								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div id="foo" class="hover" >
+										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+								</div>
+							</figure>
+							<figure class="left">
+								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div id="foo" class="hover" >
+										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+								</div>
+							</figure>
+							<figure class="top">
+								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+									<div id="foo" class="hover" >
+									<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover">
+										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+										</div>			
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+									<div class="hover favourite-placeholder">
+										<div class="result" >	
+										</div>	
+									</div>
+								</div>
+							</figure>
+							<figure class="bottom">
+								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div id="foo" class="hover" >
+											<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+								</div>
+							</figure>
+						</div>
+						<ol class="cube-face-labels">
+							<li>Manual Tester 1</li>
+							<li>Automated Tester</li>
+							<li>XQuery</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ol>
+					</section>						
 					</div>
-					<div class="navbar hovering-text hidden">
-						<a class="btn-my-account" href="#">my account</a> | <a class="btn-log-out" href="#">log out</a>
-					</div>
-					<div class="legal hovering-text ">
-						Wizerati. &copy; Ben Aston 2013
-					</div>
+				</div> <!--end of search panel -->
+				<div class="navbar hovering-text hidden">
+					<a class="btn-my-account" href="#">my account</a> | <a class="btn-log-out" href="#">log out</a>
+				</div>
+				<div class="legal hovering-text ">
+					Wizerati. &copy; Ben Aston 2013
+				</div>
 					<div class="results wrapper hidden">
 						<div class="hover" draggable="true" id="r1" ondragstart="drag(event);" >
 							<div class="textual result sheen" >	
@@ -479,11 +768,14 @@
 					</div>
 				</div>
 			</div>
+		
 			<noscript>
 				<div id="no-script">
 					<h1>This website requires <em>JavaScript</em>.</h1>
 				</div>
 			</noscript>
+			<script src='http://desandro.github.com/3dtransforms/js/utils.js'></script>
+			<script src='http://desandro.github.com/3dtransforms/js/rotate-box.js'></script>
 			<script src='/javascripts/vendor/fastclick.js'></script>
 			<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
 			<script src="/javascripts/vendor/iscroll.js"></script>

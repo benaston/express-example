@@ -322,6 +322,25 @@
   .availability {
     margin-bottom: 10px;
   }
+  .cube-controls {
+    width: 260px;
+    position: absolute;
+    left: 188px;
+    top: 49px;
+  }
+  .cube-net {
+    position: relative;
+    left: 50px;
+  }
+  .cube-net label {
+    margin: auto !important;
+  }
+  .cube-net tr:nth-child(2) label {
+    left: 0 !important;
+  }
+  .cube-controls {
+    width: 260px;
+  }
   body {
     color: #333;
     margin: 0;
@@ -330,7 +349,7 @@
 /*from bootstrap*/
     font-size: 1.1em;
     font-family: 'museo-sans-500';
-    background-image: url("./logo.svg");
+    background-image: url("/images/logo.svg");
     background-size: 2000px auto, auto auto;
     background-repeat: no-repeat, repeat;
     background-position: 0 0;
@@ -374,6 +393,8 @@
   .favourites {
     height: 100%;
     width: 100%;
+    border: 0px solid #c0c0c0;
+    border-radius: 26px;
   }
   .favourites .hover {
     width: 108px;
@@ -518,11 +539,11 @@
   .my-favourites .result {
     cursor: pointer;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:nth-child(odd) {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result:nth-child(odd) {
     -webkit-animation: jiggle 0.2s infinite 0.05s;
     -moz-animation-name: jiggle;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:nth-child(even) {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result:nth-child(even) {
     -webkit-animation: jiggle 0.2s infinite;
     -moz-animation-duration: 0.2s;
     -moz-animation-name: jiggle;
@@ -530,16 +551,16 @@
     -webkit-transform: rotate(-1deg);
     -moz-transform: rotate(-1deg);
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:after {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result:after {
     content: none !important;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result {
     opacity: 1 !important;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:before:hover {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result:before:hover {
     border: 2px solid #000;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result::before {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result::before {
     background-color: #000;
     border-radius: 41px;
     box-shadow: 0px 0px 0 0px #333;
@@ -548,7 +569,7 @@
     display: inline-block;
     font-size: 20px;
     position: relative;
-    left: 47%;
+    left: 0;
     top: -52%;
     width: 2px;
     height: 113px;
@@ -556,7 +577,7 @@
     text-align: center;
     -webkit-transform: rotate(45deg);
   }
-  .mac .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:before {
+  .mac .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result:before {
     line-height: 20px;
   }
   .account-panel #p:checked ~ .profile-form,
@@ -850,6 +871,14 @@
     padding: 20px;
     color: #7a7a8a;
   }
+  #f-t:checked ~ .cube-controls label[for='f-t'],
+  #f-l:checked ~ .cube-controls label[for='f-l'],
+  #f-f:checked ~ .cube-controls label[for='f-f'],
+  #f-r:checked ~ .cube-controls label[for='f-r'],
+  #f-bottom:checked ~ .cube-controls label[for='f-bottom'],
+  #f-back:checked ~ .cube-controls label[for='f-back'] {
+    border: 2px solid #000;
+  }
   input[type="radio"]:checked + label {
     border: 2px solid #000;
   }
@@ -982,18 +1011,18 @@
     text-decoration: none;
     box-shadow: 0 1px rgba(255,255,255,0.3) inset, 0 10px 20px rgba(255,255,255,0.25) inset, 0 0 0 2px rgba(255,255,0,0.3) inset;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:hover {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result:hover {
     box-shadow: 0 1px rgba(255,255,255,0.3) inset, 0 10px 20px rgba(255,255,255,0.25) inset, 0 0 0 2px rgba(255,0,0,0.3) inset;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:active {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result:active {
     box-shadow: 0 1px rgba(255,255,255,0.3) inset, 0 10px 20px rgba(255,255,255,0.25) inset, 0 0 0 2px rgba(255,0,0,0.8) inset !important;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder):active {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder):active {
     -webkit-animation-name: rotateAndLoseOpacity;
     -webkit-animation-duration: 1.1s;
     -webkit-animation-timing-function: ease-out;
   }
-  .my-favourites #fav:checked ~ .favourites .hover:not(.favourite-placeholder) .result:focus {
+  .my-favourites #fav:checked ~ figure .favourites .hover:not(.favourite-placeholder) .result:focus {
     box-shadow: 0 0 0 2px rgba(255,0,0,0.8) inset !important;
   }
   .mac .circular-btn {
@@ -1244,8 +1273,8 @@
   }
   #btn-edit-favourites {
     position: absolute;
-    left: 280px;
-    top: 86px;
+    left: 250px;
+    top: -65px;
   }
 }
 @media only screen and (max-height: 700px) {
@@ -1265,7 +1294,7 @@
     bottom: 5px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 640px) {
   #btn-search {
     left: 86px;
     top: 231px;

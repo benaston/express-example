@@ -1,117 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!-- Copyright Ben Aston 2013. All rights reserved. -->
-		<!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
-		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+		<!-- Copyright Ben Aston 2013. All rights reserved. -->		
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 		<title>Wizerati</title>
-		<link href="/stylesheets/style.css" rel="stylesheet">
-		<meta name="description" content="Wizerati is a search engine for IT contracts and IT talent.">
-		<meta name="author" content="Ben Aston">
-		<meta name="Keywords" content="wizerati,hire,job,recruitment,contractor,it">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="viewport" content="initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-		<meta name="format-detection" content="telephone=no">
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">	
-		<link data-device="2G/3G/3GS" rel="apple-touch-icon" href="/images/appleTouchIcon57.png">
-		<link data-device="4G/4GS" rel="apple-touch-icon" sizes="72x72" href="/images/appleTouchIcon72.png">
-		<link data-device="iPad" rel="apple-touch-icon" sizes="114x114" href="/images/appleTouchIcon114.png">
-		<link data-device="iPad landscape" rel="apple-touch-startup-image" href="" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link data-device="iPad portrait" rel="apple-touch-startup-image" href="" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link data-device="iPhone" rel="apple-touch-startup-image" href="" media="screen and (max-device-width: 320px)">	
+		<link href="/stylesheets/style.css" rel="stylesheet" />
+		<meta name="description" content="Wizerati is a search engine for IT contracts and IT talent." />
+		<meta name="author" content="Ben Aston" />
+		<meta name="Keywords" content="wizerati,hire,job,recruitment,contractor,it" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link data-device="2G/3G/3GS" rel="apple-touch-icon" href="/images/appleTouchIcon57.png" />
+		<link data-device="4G/4GS" rel="apple-touch-icon" sizes="72x72" href="/images/appleTouchIcon72.png" />
+		<link data-device="iPad" rel="apple-touch-icon" sizes="114x114" href="/images/appleTouchIcon114.png" />
+		<link data-device="iPad landscape" rel="apple-touch-startup-image" href="" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+		<link data-device="iPad portrait" rel="apple-touch-startup-image" href="" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" />
+		<link data-device="iPhone" rel="apple-touch-startup-image" href="" media="screen and (max-device-width: 320px)" />
 		<noscript>
 			<style>
 				#example{display:none !important;}
 				#no-script{display:block !important;}
 			</style>
-		</noscript>	
-		<style media="screen">
-
-    .container {
-      width: 260px;
-      height: 260px;
-      position: relative;
-      border: none;
-      -webkit-perspective: 1000px;         
-    }
-
-    #cube {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      -webkit-transform-style: preserve-3d;         
-      -webkit-transition: -webkit-transform 1s;
-    }
-
-    #cube figure {
-      display: block;
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border: none;
-line-height: 85px;      
-      text-align: center;	  
-    }
-
-    #cube.panels-backface-invisible figure {
-      -webkit-backface-visibility: hidden;         
-    }
-/*
-    #cube .front  { background: hsla(   0, 100%, 50%, 0.7 ); }
-    #cube .back   { background: hsla(  60, 100%, 50%, 0.7 ); }
-    #cube .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
-    #cube .left   { background: hsla( 180, 100%, 50%, 0.7 ); }
-    #cube .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
-    #cube .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
-*/
-    #cube .front  {
-      -webkit-transform: translateZ( 100px );                       
-    }
-    #cube .back   {
-      -webkit-transform: rotateX( -180deg ) translateZ( 100px );         
-    }
-    #cube .right {
-      -webkit-transform: rotateY(   90deg ) translateZ( 100px );         
-    }
-    #cube .left {
-      -webkit-transform: rotateY(  -90deg ) translateZ( 100px );         
-    }
-    #cube .top {
-      -webkit-transform: rotateX(   90deg ) translateZ( 100px );         
-    }
-    #cube .bottom {
-      -webkit-transform: rotateX(  -90deg ) translateZ( 100px );         
-    }
-
-    #cube.show-front, #f-f:checked ~ #cube {
-      -webkit-transform: translateZ( -100px );         
-    }
-    #cube.show-back, #f-back:checked ~ #cube {
-      -webkit-transform: translateZ( -100px ) rotateX( -180deg );         
-    }
-    #cube.show-right, #f-r:checked ~ #cube {
-      -webkit-transform: translateZ( -100px ) rotateY(  -90deg );         
-    }
-    #cube.show-left, #f-l:checked ~ #cube {
-      -webkit-transform: translateZ( -100px ) rotateY(   90deg );         
-    }
-    #cube.show-top, #f-t:checked ~ #cube {
-      -webkit-transform: translateZ( -100px ) rotateX(  -90deg );         
-    }
-    #cube.show-bottom, #f-bottom:checked ~ #cube {
-      -webkit-transform: translateZ( -100px ) rotateX(   90deg );         
-    }
-
-	section, footer, nav {
-display: block;
-}
-
-figure {
-margin: 0;
-}
-  </style>
+		</noscript>			
 	</head>
 	<body>		
 		<div class="app-wrapper three-d-context">
@@ -143,47 +57,16 @@ margin: 0;
 				</div>
 				<div class="search-panel wrapper hidden">
 					<div class="search-form">
-						<input type="button" id="btn-search" class="btn-show-dialog circular-btn" alt="Search" title="Search" value="s">			
+						<input type="button" id="btn-search" class="btn-show-dialog circular-btn" alt="Search" title="Search" value="s" />
 						<div class="search-fields">
-							<input id="foo" name="foo" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Skills..." tabindex="1" autocorrect="off" autocapitalize="none" type="text">
-							<input id="foo2" name="foo2" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">					
+							<input id="foo" name="foo" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Skills..." tabindex="1" autocorrect="off" autocapitalize="none" type="text" />
+							<input id="foo2" name="foo2" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
 						</div>
 						<div class="search-filters">
-							<span class="gray">Minimum rate (GBP)</span>
+							<span class="gray">Maximum rate (GBP)</span>
 							<table>
-								<tr>
-									<td>
-										<input id="r200" name="r" type="radio" checked="checked" />
-										<label for="r200">200</label>									
-									</td>
-									<td>
-										<input id="r300" name="r" type="radio" />
-										<label for="r300">300</label>							
-									</td>
-									<td>
-										<input id="r400" name="r" type="radio" />
-										<label for="r400">
-											400								
-										</label>
-									</td>
-									<td>
-										<input id="r500" name="r" type="radio" />
-										<label for="r500">
-											500								
-										</label>
-									</td>
-									<td>
-										<input id="r600" name="r" type="radio" />
-										<label for="r600">
-											600								
-										</label>
-									</td>						
-								</tr>	
-								<tr>
-									<td>
-										<input id="r250" name="r" type="radio" checked="checked" />
-										<label for="r250">250</label>									
-									</td>
+									
+								<tr>									
 									<td>
 										<input id="r350" name="r" type="radio" />
 										<label for="r350">350</label>							
@@ -201,214 +84,112 @@ margin: 0;
 										</label>
 									</td>
 									<td>
+										<input id="r650" name="r" type="radio" />
+										<label for="r650">
+											650								
+										</label>
+									</td>
+									<td>
+										<input id="r750+" name="r" type="radio" />
+										<label for="r750+">
+											750+					
+										</label>
+									</td>
+									<td>
+										<input id="r850" name="r" type="radio" />																				
+									</td>
+								</tr>	
+								<tr>																		
+									<td>
+										<input id="r400" name="r" type="radio" />
+										<label for="r400">
+											400								
+										</label>
+									</td>
+									<td>
+										<input id="r500" name="r" type="radio" />
+										<label for="r500">
+											500								
+										</label>
+									</td>
+									<td>
+										<input id="r600" name="r" type="radio" />
+										<label for="r600">
+											600								
+										</label>
+									</td>
+									<td>
+										<input id="r700" name="r" type="radio" />
+										<label for="r700">
+											700
+										</label>
+									</td>
+									<td>
+										<input id="r800+" name="r" type="radio" />
 										
-									</td>						
-								</tr>					
+									</td>					
+								</tr>								
 							</table>			
 						</div>				
 					</div>	
 					<div class="my-favourites">
-							<h2>my favourites</h2>													
-					<section class="container">
-						<input id="f-t" name="favourites-panel" type="radio" checked="checked"> 
-						<input id="f-l" name="favourites-panel" type="radio"> 
-						<input id="f-f" name="favourites-panel" type="radio"> 
-						<input id="f-r" name="favourites-panel" type="radio"> 
-						<input id="f-bottom" name="favourites-panel" type="radio"> 
-						<input id="f-back" name="favourites-panel" type="radio"> 
-						<label id="btn-edit-favourites" for="fav" class="btn-show-dialog circular-btn" alt="Edit" title="Edit">y</label>
-						<div class="cube-controls">
-							<table class="cube-net"> 
-								<tbody>
-									<tr> 
-										<td colspan="3"> 										
-											<label for="f-t"> 
-												1								 
-											</label> 
-										</td> 
-									</tr>
-									<tr>
-										<td> 										
-											<label for="f-l"> 
-												2					 
-											</label> 
-										</td>						 
-										<td> 										
-											<label for="f-f"> 
-												3								 
-											</label> 
-										</td>
-										<td> 
-											<label for="f-r"> 
-												4
-											</label> 
-										</td>						 
-									</tr>	 
-									<tr>
-										<td colspan="3"> 
-											<label for="f-bottom"> 
-												5
-											</label> 
-										</td> 									
-									</tr>					 
-									<tr>
-										<td colspan="3"> 
-											<label for="f-back"> 
-												6								 
-											</label> 
-										</td> 									
-									</tr>					 
-								</tbody>
-							</table>
-						</div>
-						<div id="cube" class="panels-backface-invisible">
-							<input type="checkbox" id="fav" />			
-							<figure class="front">
-								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
-									<div id="foo" class="hover" >
-										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-								</div>
-							</figure>
-							<figure class="back">
-								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
-									<div id="foo" class="hover" >
-										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-								</div>
-							</figure>
-							<figure class="right">
-								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div id="foo" class="hover" >
-										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-								</div>
-							</figure>
-							<figure class="left">
-								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div id="foo" class="hover" >
-										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-								</div>
-							</figure>
-							<figure class="top">
-								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
-									<div id="foo" class="hover" >
-									<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover">
-										<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
-										</div>			
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-									<div class="hover favourite-placeholder">
-										<div class="result" >	
-										</div>	
-									</div>
-								</div>
-							</figure>
-							<figure class="bottom">
-								<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
-										<div class="hover favourite-placeholder">
-											<div class="result" >	
-											</div>	
-										</div>
+						<h2>my favourites</h2>													
+						<section class="container">
+							<input id="f-t" name="favourites-panel" type="radio" checked="checked" /> 
+							<input id="f-l" name="favourites-panel" type="radio" /> 
+							<input id="f-f" name="favourites-panel" type="radio" /> 
+							<input id="f-r" name="favourites-panel" type="radio" /> 
+							<input id="f-bottom" name="favourites-panel" type="radio" /> 
+							<input id="f-back" name="favourites-panel" type="radio" /> 
+							<label id="btn-edit-favourites" for="fav" class="btn-show-dialog circular-btn" alt="Edit" title="Edit">y</label>
+							<div class="cube-controls">
+								<table class="cube-net"> 
+									<tbody>
+										<tr> 
+											<td colspan="3"> 										
+												<label for="f-t"> 
+													1								 
+												</label> 
+											</td> 
+										</tr>
+										<tr>
+											<td> 										
+												<label for="f-l"> 
+													2					 
+												</label> 
+											</td>						 
+											<td> 										
+												<label for="f-f"> 
+													3								 
+												</label> 
+											</td>
+											<td> 
+												<label for="f-r"> 
+													4
+												</label> 
+											</td>						 
+										</tr>	 
+										<tr>
+											<td colspan="3"> 
+												<label for="f-bottom"> 
+													5
+												</label> 
+											</td> 									
+										</tr>					 
+										<tr>
+											<td colspan="3"> 
+												<label for="f-back"> 
+													6								 
+												</label> 
+											</td> 									
+										</tr>					 
+									</tbody>
+								</table>
+							</div>
+							<div id="cube" class="panels-backface-invisible">
+								<input type="checkbox" id="fav" />			
+								<figure class="front">
+									<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
 										<div id="foo" class="hover" >
 											<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
 											</div>			
@@ -429,18 +210,162 @@ margin: 0;
 											<div class="result" >	
 											</div>	
 										</div>
-								</div>
-							</figure>
-						</div>
-						<ol class="cube-face-labels">
-							<li>Manual Tester 1</li>
-							<li>Automated Tester</li>
-							<li>XQuery</li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ol>
-					</section>						
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+									</div>
+								</figure>
+								<figure class="back">
+									<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+										<div id="foo" class="hover" >
+											<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+									</div>
+								</figure>
+								<figure class="right">
+									<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div id="foo" class="hover" >
+											<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+									</div>
+								</figure>
+								<figure class="left">
+									<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div id="foo" class="hover" >
+											<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+									</div>
+								</figure>
+								<figure class="top">
+									<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+										<div id="foo" class="hover" >
+										<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover">
+											<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+											</div>			
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+										<div class="hover favourite-placeholder">
+											<div class="result" >	
+											</div>	
+										</div>
+									</div>
+								</figure>
+								<figure class="bottom">
+									<div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+											<div class="hover favourite-placeholder">
+												<div class="result" >	
+												</div>	
+											</div>
+											<div id="foo" class="hover" >
+												<div class="result sheen selected" style="background-image: url(http://images3.wikia.nocookie.net/__cb20110827140614/thundercats/images/e/ed/Cheetara_4311.JPG); background-position:0 0 !important;">	
+												</div>			
+											</div>
+											<div class="hover">
+												<div class="result sheen expired" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110812045951/thundercats/images/f/f9/Tygra_at_Lion-o%27s_sword_ceremony.jpg); background-position:0 0 !important;">	
+												</div>			
+											</div>
+											<div class="hover">
+												<div class="result sheen" style="background-image: url(http://kleberivo.files.wordpress.com/2011/07/lion-o.jpg); background-position:0 0 !important;">	
+												</div>			
+											</div>
+											<div class="hover favourite-placeholder">
+												<div class="result" >	
+												</div>	
+											</div>
+											<div class="hover favourite-placeholder">
+												<div class="result" >	
+												</div>	
+											</div>
+									</div>
+								</figure>
+							</div>
+							<ol class="cube-face-labels">
+								<li>Manual Tester 1</li>
+								<li>Automated Tester</li>
+								<li>XQuery</li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ol>
+						</section>						
 					</div>
 				</div> <!--end of search panel -->
 				<div class="navbar hovering-text hidden">
@@ -449,139 +374,137 @@ margin: 0;
 				<div class="legal hovering-text ">
 					Wizerati. &copy; Ben Aston 2013
 				</div>
-					<div class="results wrapper hidden">
-						<div class="hover" draggable="true" id="r1" ondragstart="drag(event);" >
-							<div class="textual result sheen" >	
-								<h2>C# Developer / Technical Lead</h2>	
-								<p>&pound;475-550/day (more for excellent candidates)</p>
-								<p>London</p>
-								<p class="posted">2 days ago</p>								
-							</div>			
-						</div>
-						<div class="hover" draggable="true" id="r2" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
-							<div class="result sheen ignored"style="background-image: url(http://images1.wikia.nocookie.net/__cb20081123044821/thundercats/images/3/3d/Panthro.jpg); background-position:0 0 !important;">	
-							</div>			
-						</div><div class="hover" draggable="true" id="r3" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
-							<div class="result sheen visited" style="background-image: url(http://images4.wikia.nocookie.net/__cb20090329145138/thundercats/images/2/2d/Wilykit.jpg); background-position:0 0 !important;">	
-							</div>			
-						</div><div class="hover" draggable="true" id="r4" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
-							<div class="result sheen"style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;">	
-							</div>			
-						</div><div class="hover" draggable="true" id="r5" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
-							<div class="result sheen updated" draggable="true" id="r5" ondragstart="drag(event)" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110828055707/thundercats/images/thumb/c/c5/Unknown_ancient_Thundercat_beside_Munra_%28LionO_resembles_him%29.png/830px-Unknown_ancient_Thundercat_beside_Munra_%28LionO_resembles_him%29.png); background-position:0 0 !important;">	
-							</div>			
-						</div>
-						<div class="hover" draggable="true" id="r6" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
-							<div class="result sheen" style="background-image: url(http://images3.wikia.nocookie.net/__cb20120516221435/thundercats/images/2/2f/Pumyra3.jpg); background-position:0 0 !important;">	
-							</div>			
-						</div>
-						<div class="hover" draggable="true" id="r7" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
-							<div class="result sheen" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120415055932/thundercats/images/f/f0/TC2011ClaudusQueen.png); background-position:0 0 !important;">	
-							</div>			
-						</div>
+				<div class="results wrapper hidden">
+					<div class="hover" draggable="true" id="r1" ondragstart="drag(event);" >
+						<div class="textual result sheen" >	
+							<h2>C# Developer / Technical Lead</h2>	
+							<p>&pound;475-550/day (more for excellent candidates)</p>
+							<p>London</p>
+							<p class="posted">2 days ago</p>								
+						</div>			
 					</div>
-					<article class="result-details wrapper hidden is-favourite">
-						<header>
-							<div class="menu" name="top" style="position:relative;">					
-								<input type="button" class="btn-show-dialog circular-btn" alt="Applied" title="Applied" value="2">
-								<input type="button" class="btn-show-dialog circular-btn" alt="Ignore" title="Ignore" value="-">
-								<input type="button" class="btn-show-dialog circular-btn btn-favourite" alt="Favourite" title="Favourite" value="S">
-							</div>	
-						</header>	
-						<section>		
-							<h1>Cheetara Kat</h1>
-							<h3>New York (<i>Not Currently Available</i>)</h3>
-							<h3>+44 (0)7742157185 | ben@bj.ma</h3>
-							<h2>Personal Battle Assistant</h2>
-							<section>
-								<article class="itemSummary">
-									<blockquote>
-										Cheetara is a member of the ThunderCats and the third to join. She is the elder of the two females in the group, the younger being WilyKit. She is a cleric whose skills take advantage of her immense speed. She wields a staff, but is also adapted to fighting unarmed.
-									</blockquote>
-								</article>
-							</section>
-							<section>
-								<hr>
-								<h2>Technologies</h2>
-								<article style="padding:0;margin:0;">
-									<p><strong style="font-weight:bold;">Staff</strong></p>
-								</article>
-							</section>
-							<section>
-								<hr />
-								<h2>Experience</h2>					
-									<article>
-										<h4>Senior Developer</h4>
-										<h5 style="font-style:italic;">JustGiving</h5>
-										<h6>Mar 11- Mar 12</h6>
-										<p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p>
-									</article>
-								
-									<article>
-										<h4>Senior Developer</h4>
-										<h5 style="font-style:italic;">JustGiving</h5>
-										<h6>Mar 11- Mar 12</h6>
-										<p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p>
-									</article>
-								
-							</section>
-							<section>
-								<hr>
-								<h2>Education</h2>
-									<article>
-										<h4></h4>
-										<h5></h5>
-										<p></p>
-									</article>
-							</section>
-							<section>
-								<hr>
-								<h2>Open Source</h2>
-								<article>
-									<h4>NFeature</h4>
-									<p><a href="github.com">github.com</a></p>
-								</article>
-							</section>
-							<section>
-								<hr>
-								<h2>Currently Interested In</h2>
-								<article>
-									<p>JavaScript</p>
-								</article>
-							</section>
-							<section>
-									<hr>
-									<h2>Selected Books</h2>
-								<article>
-									<p>The Art of Programming, JK Tolkien</p>
-								</article>
-							</section>
-							<section>
-								<article>
-									<hr>
-									<a href="#" class="back-to-top">Back to top</a>
-								</article>
-							</section>
-						</section>					
-					</article>		
+					<div class="hover" draggable="true" id="r2" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
+						<div class="result sheen ignored"style="background-image: url(http://images1.wikia.nocookie.net/__cb20081123044821/thundercats/images/3/3d/Panthro.jpg); background-position:0 0 !important;">	
+						</div>			
+					</div><div class="hover" draggable="true" id="r3" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
+						<div class="result sheen visited" style="background-image: url(http://images4.wikia.nocookie.net/__cb20090329145138/thundercats/images/2/2d/Wilykit.jpg); background-position:0 0 !important;">	
+						</div>			
+					</div><div class="hover" draggable="true" id="r4" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
+						<div class="result sheen"style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;">	
+						</div>			
+					</div><div class="hover" draggable="true" id="r5" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
+						<div class="result sheen updated" draggable="true" id="r5" ondragstart="drag(event)" style="background-image: url(http://images2.wikia.nocookie.net/__cb20110828055707/thundercats/images/thumb/c/c5/Unknown_ancient_Thundercat_beside_Munra_%28LionO_resembles_him%29.png/830px-Unknown_ancient_Thundercat_beside_Munra_%28LionO_resembles_him%29.png); background-position:0 0 !important;">	
+						</div>			
+					</div>
+					<div class="hover" draggable="true" id="r6" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
+						<div class="result sheen" style="background-image: url(http://images3.wikia.nocookie.net/__cb20120516221435/thundercats/images/2/2f/Pumyra3.jpg); background-position:0 0 !important;">	
+						</div>			
+					</div>
+					<div class="hover" draggable="true" id="r7" ondragstart="drag(event);$(this).addClass('scale-down');" ondragend="$(this).removeClass('scale-down');" >
+						<div class="result sheen" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120415055932/thundercats/images/f/f0/TC2011ClaudusQueen.png); background-position:0 0 !important;">	
+						</div>			
+					</div>
 				</div>
-				<div class="back">	
+				<article class="result-details wrapper hidden is-favourite">
+					<header>
+						<div class="menu" name="top" style="position:relative;">					
+							<input type="button" class="btn-show-dialog circular-btn" alt="Applied" title="Applied" value="2" />
+							<input type="button" class="btn-show-dialog circular-btn" alt="Ignore" title="Ignore" value="-" />
+							<input type="button" class="btn-show-dialog circular-btn btn-favourite" alt="Favourite" title="Favourite" value="S" />
+						</div>	
+					</header>	
+					<section>		
+						<h1>Cheetara Kat</h1>
+						<h3>New York (<i>Not Currently Available</i>)</h3>
+						<h3>+44 (0)7742157185 | ben@bj.ma</h3>
+						<h2>Personal Battle Assistant</h2>
+						<section>
+							<article class="itemSummary">
+								<blockquote>
+									Cheetara is a member of the ThunderCats and the third to join. She is the elder of the two females in the group, the younger being WilyKit. She is a cleric whose skills take advantage of her immense speed. She wields a staff, but is also adapted to fighting unarmed.
+								</blockquote>
+							</article>
+						</section>
+						<section>
+							<hr />
+							<h2>Technologies</h2>
+							<article style="padding:0;margin:0;">
+								<p><strong style="font-weight:bold;">Staff</strong></p>
+							</article>
+						</section>
+						<section>
+							<hr />
+							<h2>Experience</h2>					
+							<article>
+								<h4>Senior Developer</h4>
+								<h5 style="font-style:italic;">JustGiving</h5>
+								<h6>Mar 11- Mar 12</h6>
+								<p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p>
+							</article>						
+							<article>
+								<h4>Senior Developer</h4>
+								<h5 style="font-style:italic;">JustGiving</h5>
+								<h6>Mar 11- Mar 12</h6>
+								<p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p>
+							</article>							
+						</section>
+						<section>
+							<hr />
+							<h2>Education</h2>
+								<article>
+									<h4></h4>
+									<h5></h5>
+									<p></p>
+								</article>
+						</section>
+						<section>
+							<hr />
+							<h2>Open Source</h2>
+							<article>
+								<h4>NFeature</h4>
+								<p><a href="github.com">github.com</a></p>
+							</article>
+						</section>
+						<section>
+							<hr />
+							<h2>Currently Interested In</h2>
+							<article>
+								<p>JavaScript</p>
+							</article>
+						</section>
+						<section>
+								<hr />
+								<h2>Selected Books</h2>
+							<article>
+								<p>The Art of Programming, JK Tolkien</p>
+							</article>
+						</section>
+						<section>
+							<article>
+								<hr />
+								<a href="#" class="back-to-top">Back to top</a>
+							</article>
+						</section>
+					</section>					
+				</article>		
+			</div>
+			<div class="back">	
 					<div class="account-panel">
 						<h1>my account</h1>
 						<div class="account-form-wrapper">
-							<input id="p" name="m" type="radio" checked="checked">
+							<input id="p" name="m" type="radio" checked="checked" />
 							<label for="p">
 								Profile							
 							</label>
-							<input id="c" name="m" type="radio">
+							<input id="c" name="m" type="radio" />
 							<label for="c">
 								CV
 							</label>												
-							<input id="e" name="m" type="radio">
+							<input id="e" name="m" type="radio" />
 							<label for="e">
 								Email
 							</label>
-							<input id="j" name="m" type="radio">
+							<input id="j" name="m" type="radio" />
 							<label for="j">
 								Jobs
 							</label>
@@ -600,48 +523,48 @@ margin: 0;
 								<a href="/auth/linkedin" class="button">Link Account</a>
 								</li>
 								</ul>
-								<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Name..." tabindex="1" autocorrect="off" autocapitalize="none" type="text">
-								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Title..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">
-								<input id="foo3" name="foo3" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Company..." tabindex="3" autocorrect="off" autocapitalize="none" type="text">
-								<input id="foo4" name="foo4" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="3" autocorrect="off" autocapitalize="none" type="text">						
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">									
+								<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Name..." tabindex="1" autocorrect="off" autocapitalize="none" type="text" />
+								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Title..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+								<input id="foo3" name="foo3" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Company..." tabindex="3" autocorrect="off" autocapitalize="none" type="text" />
+								<input id="foo4" name="foo4" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="3" autocorrect="off" autocapitalize="none" type="text" />						
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />									
 							</div>	
 							<div class="cv-form">
 								<div class="availability">
 									<span class="one-pt-two">Available? </span>
-									<input id="y" name="a" type="radio" checked="checked">
+									<input id="y" name="a" type="radio" checked="checked" />
 									<label for="y">
 										Yes						
 									</label>
-									<input id="n" name="a" type="radio">
+									<input id="n" name="a" type="radio" />
 									<label for="n">
 										No
-									</label>												
-									<input id="s" name="a" type="radio">
+									</label>											
+									<input id="s" name="a" type="radio" />
 									<label for="s">
 										Soon
 									</label>
 								</div>
 								<div class="contact-details">
-									<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Telephone..." tabindex="1" autocorrect="off" autocapitalize="none" type="text">						
-									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Blog..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Personal website..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">																
-									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+									<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Telephone..." tabindex="1" autocorrect="off" autocapitalize="none" type="text" />
+									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Blog..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Personal website..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />					
 								</div>
 								<div class="summary">
 									<textarea class="field input-xxlarge" rows="10" placeholder="Personal statement..."></textarea>
 									<div class="meta-info">A good personal statement is short, raises your profile, connects with the reader's values.</div>
-									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">											
+									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />											
 								</div>
 								<div class="skills">
 									<textarea class="field input-xxlarge" rows="10" placeholder="Key skills..."></textarea>
 									<div class="meta-info">Jot down a comma separated list of your key skills.</div>							
-									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />					
 								</div>
 								<div class="tools">
 									<textarea class="field input-xxlarge" rows="10" placeholder="Tools..."></textarea>							
 									<div class="meta-info">Jot down a comma separated list of tools that you are familiar with.</div>
-									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">												
+									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />												
 								</div>
 								<div class="experience">
 									<div class="heading"><h3>Experience</h3></div>						
@@ -660,65 +583,65 @@ margin: 0;
 									</div>
 									<a href="" style="float:right; margin-top:10px">add experience</a>
 									<div class="add-experience-form" style="display:none;">
-										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Top 2 skills..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Company name..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="From..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="To..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
+										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Top 2 skills..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Company name..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="From..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="To..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
 										<textarea class="field input-xxlarge" rows="10" placeholder="Details..."></textarea>
 										<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
 									</div>
 								</div>
 								<div class="heading"><h3>Education</h3></div>						
-								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="School Name..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="School Name..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />										
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />
 								<div class="heading"><h3 style="clear:both;">Open Source</h3></div>
-								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Link 1..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">		
+								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Link 1..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />
 								<div class="heading"><h3 style="clear:both;">Interested In</h3></div>
 								<textarea class="field input-xxlarge" rows="10" placeholder="Interests..."></textarea>
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />					
 								<div class="heading"><h3 style="clear:both;">Favourite Books</h3></div>
 								<textarea class="field input-xxlarge" rows="10" placeholder="Interests..."></textarea>
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />					
 							</div>
 							<div class="email-form">
-								<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Email address..." tabindex="1" autocorrect="off" autocapitalize="none" type="text">						
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+								<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Email address..." tabindex="1" autocorrect="off" autocapitalize="none" type="text" />						
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />					
 							</div>				
 							<div class="jobs-form">
 								<div class="availability">
-									<span class="one-pt-two">Published? </span>
-									<input id="y" name="a" type="radio" checked="checked">
+									<span class="one-pt-two">Published?</span>
+									<input id="y" name="a" type="radio" checked="checked" />
 									<label for="y">
 										Yes						
 									</label>
-									<input id="n" name="a" type="radio">
+									<input id="n" name="a" type="radio" />
 									<label for="n">
 										No
 									</label>							
 								</div>
 								<div class="contact-details">
-									<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Job Advert Title..." tabindex="1" autocorrect="off" autocapitalize="none" type="text">						
-									<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Telephone..." tabindex="1" autocorrect="off" autocapitalize="none" type="text">						
-									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Upper rate (GBP/day)..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Lower rate (GBP/day)..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Company website..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">																
-									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+									<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Job Advert Title..." tabindex="1" autocorrect="off" autocapitalize="none" type="text" />						
+									<input id="foo" name="foo" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Telephone..." tabindex="1" autocorrect="off" autocapitalize="none" type="text" />
+									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Upper rate (GBP/day)..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Lower rate (GBP/day)..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+									<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Company website..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />
 								</div>
 								<div class="summary">
 									<textarea class="field input-xxlarge" rows="10" placeholder="One line summary..."></textarea>
 									<div class="meta-info">Foo bar.</div>
-									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">											
+									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />
 								</div>
 								<div class="skills">
 									<textarea class="field input-xxlarge" rows="10" placeholder="Key skills..."></textarea>
-									<div class="meta-info">Jot down a comma separated list of your key skills.</div>							
-									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+									<div class="meta-info">Jot down a comma separated list of your key skills.</div>	
+									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />
 								</div>
 								<div class="tools">
-									<textarea class="field input-xxlarge" rows="10" placeholder="Tools..."></textarea>							
+									<textarea class="field input-xxlarge" rows="10" placeholder="Tools..."></textarea>
 									<div class="meta-info">Jot down a comma separated list of tools that you are familiar with.</div>
-									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">												
+									<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />
 								</div>
 								<div class="experience">
 									<div class="heading"><h3>Experience</h3></div>						
@@ -730,33 +653,33 @@ margin: 0;
 		store (MarkLogic). Pull-based development (Kanban). Improved system performance by ?ve times. Ran project 
 		inception, knowledge acquisition workshops, retrospectives. Performed business analysis, formed initial product 
 		backlog. Coordinated development team (3 developers). Delivered weekly demonstrations, releases, ad-hoc 
-		estimation sessions and status brie?ngs including burn-up charts and risk log highlights. Worked with offshore team 
+		estimation sessions and status briefngs including burn-up charts and risk log highlights. Worked with offshore team 
 		to de?ne and coordinate release process, testing and story lifecycle. Developed RESTful inter-system connector 
 		following service-oriented architectural principles. Delivered architectural options for geographically distributed  
 		system deployment, including latency impact analysis</div>
 									</div>
 									<a href="" style="float:right; margin-top:10px">add experience</a>
 									<div class="add-experience-form" style="display:none;">
-										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Top 2 skills..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Company name..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="From..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="To..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
+										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Top 2 skills..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />										
+										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Company name..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />										
+										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="From..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />										
+										<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="To..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />										
 										<textarea class="field input-xxlarge" rows="10" placeholder="Details..."></textarea>
-										<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+										<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />
 									</div>
 								</div>
 								<div class="heading"><h3>Education</h3></div>						
-								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="School Name..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="School Name..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />					
 								<div class="heading"><h3 style="clear:both;">Open Source</h3></div>
-								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Link 1..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">										
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">		
+								<input id="foo2" name="foo2" class="field input-xxlarge" pattern="[0-9]{13,16}" required="required" placeholder="Link 1..." tabindex="2" autocorrect="off" autocapitalize="none" type="text" />
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />
 								<div class="heading"><h3 style="clear:both;">Interested In</h3></div>
 								<textarea class="field input-xxlarge" rows="10" placeholder="Interests..."></textarea>
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />					
 								<div class="heading"><h3 style="clear:both;">Favourite Books</h3></div>
 								<textarea class="field input-xxlarge" rows="10" placeholder="Interests..."></textarea>
-								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3">					
+								<input type="button" class="btn-show-dialog circular-btn" data-action="success" alt="Save" title="Save" value="3" />					
 							</div>
 						</div>
 					</div>
@@ -768,17 +691,16 @@ margin: 0;
 					</div>
 				</div>
 			</div>
-		
-			<noscript>
-				<div id="no-script">
-					<h1>This website requires <em>JavaScript</em>.</h1>
-				</div>
-			</noscript>
-			<script src='http://desandro.github.com/3dtransforms/js/utils.js'></script>
-			<script src='http://desandro.github.com/3dtransforms/js/rotate-box.js'></script>
-			<script src='/javascripts/vendor/fastclick.js'></script>
-			<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
-			<script src="/javascripts/vendor/iscroll.js"></script>
-			<script src="/javascripts/page.js"></script>
+		</div>			
+		<noscript>
+			<div id="no-script">
+				<h1>This website requires <em>JavaScript</em>.</h1>
+			</div>
+		</noscript>
+		<script src='http://desandro.github.com/3dtransforms/js/utils.js'></script>			
+		<script src='/javascripts/vendor/fastclick.js'></script>
+		<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+		<script src="/javascripts/vendor/iscroll.js"></script>
+		<script src="/javascripts/page.js"></script>
 	</body>
 </html>
